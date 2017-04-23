@@ -11,17 +11,9 @@ app.controller('searchCompanyController', function($scope, $http) {
  
 	$scope.init = function() {
         
-		$http.get('api/searchCompany').
-		success(function(data, status, headers, config) {
-            
-            $scope.searchCompany = {};
-            $scope.searchCompany.companyName = '';
-            
-            console.log(data);
-			
-            //$scope.todos = data;
- 
-        });
+        $scope.searchCompany = {};
+        $scope.searchCompany.companyName = '';
+        
 	}
  
     $scope.searchForCompany = function() {

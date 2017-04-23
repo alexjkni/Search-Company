@@ -10,13 +10,6 @@ class searchCompanyController extends Controller
     private $apiKey = 'hXoj-z9caGAcJzHd7kwbUX2EH49kuK84BxPIyPd0';
     private $remUrl = 'https://api.companieshouse.gov.uk';
 
-    public function index()
-    { 
-        
-        return 'Hello World';
-		
-	}
-
     public function store()
     {
         
@@ -33,6 +26,14 @@ class searchCompanyController extends Controller
         $jsonData = json_decode($postData);
         $searchCompanyName = $jsonData->companyName;
         $fullUrl = $this->remUrl."/search?q=".$searchCompanyName;
+        $file = $this->makeRequest($fullUrl);
+        
+        return $file;
+        
+    }
+    
+    private function makeRequest($fullUrl)
+    {
         
         $opts = array(
             'http'=>array(
@@ -46,13 +47,6 @@ class searchCompanyController extends Controller
         $file = file_get_contents($fullUrl, false, $context);
         
         return $file;
-        
-    }
-    
-    private function makeRequest()
-    {
-        
-        return 'Hello World';
         
     }
     
