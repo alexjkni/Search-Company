@@ -11,6 +11,27 @@
 |
 */
 
+/* Search Companies */
+
+Route::get('/', 'searchCompaniesController@index');
+
+Route::resource('api/searchCompany','searchCompanyController');
+
+/* Testing Below This 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/foo/bar','UriController@index');
+
+Route::get('/register',function(){
+    
+    $config = Config::get('app.timezone');
+    
+   echo $config;
+});
+
+Route::post('/user/register',array('uses'=>'UserRegistration@postRegister'));
+
+*/
