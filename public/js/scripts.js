@@ -11,8 +11,10 @@ app.controller('searchCompanyController', function($scope, $http) {
  
 	$scope.init = function() {
         
+        $scope.barShow = true;
         $scope.searchCompany = {};
         $scope.searchCompany.companyName = '';
+        $scope.searchCompany.companyDetails = {};
         
 	}
  
@@ -25,15 +27,15 @@ app.controller('searchCompanyController', function($scope, $http) {
         console.log('HTTP REQUEST: Search for ' + companyName);
         
         $http.post('api/searchCompany', {
-            
+
+            fetchType: 'search',
             companyName: companyName
             
         }).success(function(data, status, headers, config) {
             
-            $scope.searchCompany.searchResults = data;
-            window.searchResults = data;
+            $scope.barShow = data.items.length !== 0 ? true : false;
             
-            console.log('HTTP RESPONSE: ' + data);
+            $scope.searchCompany.searchResults = data;
             
         });
         

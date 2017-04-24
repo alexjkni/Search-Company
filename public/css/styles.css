@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+#searchCompanyContainer {
+    background:rgba(204,204,204,0.25);
+    box-shadow: 0px 0px 40px rgba(0,0,0,0.3);
+    border-radius:5px;
+    margin:100px 0 300px -250px;
+    position:absolute;
+    left:50%;
+    overflow: hidden;
+    width:500px;min-height:auto;
+}
+
+h1 {
+    font-size:40px;
+    margin:10px 0;
+    text-align:center;
+}
+
+.searchInput input {
+    text-indent: 6px;
+    width:100%;height:50px;
+}
+
+.searchInput input:focus {
+    outline-width: 0;
+}
+
+.remStl {
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+hr {
+    margin-bottom:4px;
+}
+
+#searchResultsContainer {
+    overflow:scroll;
+}
+
+#searchResults ul {
+    list-style-type:none;
+    padding:10px 0;
+}
+
+#searchResults li {
+    padding:10px 0;
+}
+
+#searchResults li:nth-child(odd) {
+    background:white;
+}
+
+#searchResults li p {
+    display:inline-block;
+    text-indent:5px;
+}
