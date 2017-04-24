@@ -11,7 +11,7 @@ app.controller('searchCompanyController', function($scope, $http) {
  
 	$scope.init = function() {
         
-        $scope.barShow = true;
+        $scope.barShow = false;
         $scope.searchCompany = {};
         $scope.searchCompany.companyName = '';
         $scope.searchCompany.companyDetails = {};
