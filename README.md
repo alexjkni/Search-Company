@@ -1,7 +1,7 @@
 # Test: WinningMoves-Test - Search Companies
 **API Used: Company House API**
 
-**Time Taken: 5 hours**
+**Time Taken: 6.5 hours**
 
 **Problem: Lack of experience working with the Laravel API**
 
