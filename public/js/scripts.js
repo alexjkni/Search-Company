@@ -1,5 +1,3 @@
-console.log('Scripts Loaded');
-
 var app = angular.module('searchCompany', [], function($interpolateProvider) {
     
 	$interpolateProvider.startSymbol('<%');
@@ -13,18 +11,12 @@ app.controller('searchCompanyController', function($scope, $http) {
         
         $scope.barShow = false;
         $scope.searchCompany = {};
-        $scope.searchCompany.companyName = '';
-        $scope.searchCompany.companyDetails = {};
         
 	}
  
     $scope.searchForCompany = function() {
         
-        console.log('Searching for a Company');
-        
         var companyName = $scope.searchCompany.companyName;
-        
-        console.log('HTTP REQUEST: Search for ' + companyName);
         
         $http.post('api/searchCompany', {
 
