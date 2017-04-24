@@ -1,18 +1,18 @@
 @extends('layouts.master') @section('mainContainer')
 
-<div class="container" ng-app="searchCompany" ng-controller="searchCompanyController">
+<div id="searchCompanyContainer" class="container" ng-app="searchCompany" ng-controller="searchCompanyController">
     
-    <h1>Search For a Company</h1>
+    <h1>Search Companies</h1>
     
     <div class="searchInputContainer">
         <div class="searchInput">
             
-            <input type='text' ng-model="searchCompany.companyName">
-            
-            <button class="btn btn-primary btn-md" ng-click="searchForCompany()">Search</button>
+            <input type='text' class="remStl" ng-change="searchForCompany()" ng-model="searchCompany.companyName" placeholder="Type Here To Search">
             
         </div>
     </div>
+    
+    <hr ng-show="barShow">
     
     <div class="searchResultsContainer">
         
@@ -20,9 +20,9 @@
             
             <ul>
             
-                <li ng-repeat='result in searchCompany.searchResults.items'>
+                <li ng-repeat='company in searchCompany.searchResults.items' ng-click="companyDetails(company)">
                     
-                    <% result.title %>
+                    <p><% company.title %></p>
                         
                 </li>
             
@@ -31,6 +31,7 @@
         </div>
         
     </div>
+    
 </div>
 
 @stop

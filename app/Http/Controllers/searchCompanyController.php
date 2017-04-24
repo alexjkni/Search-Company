@@ -18,6 +18,7 @@ class searchCompanyController extends Controller
         $result = $this->searchForCompany($postData);
         
         return $result;
+        
     }
     
     private function searchForCompany($postData)
