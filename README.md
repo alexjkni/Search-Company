@@ -19,5 +19,5 @@ Problem: Getting HTTP requests to 'connect' to the appropriate controller
 
 Solution: Read deep into standard 'route'94 procedures in Laravel, Set the pathnames to 'route' to the appropriate Controller AKA:
 
-=> searchCompanitesController@index
+=> searchCompanitesController@index/
 api/searchCompany => searchCompanyController
